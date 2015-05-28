@@ -1,0 +1,24 @@
+//created on: May 26, 2015
+package com.bnymellon.rules
+
+//list any import classes here.
+import com.bnymellon.model.Router
+
+
+//declare any global variables here
+
+
+
+
+rule "determineRoute"
+
+	when r : Router (routetype == "Function" )
+		then 
+					r.setDestinationType("Group" );
+	     	        r.setDestination( "Corporate Actions Brussels" );
+	     	         System.out.println("Route Type: " + r.getRoutetype());
+	     	         System.out.println("Destination Type : " + r.getDestinationType());
+	     	          System.out.println("Destination: " + r.getDestination());
+
+end
+
